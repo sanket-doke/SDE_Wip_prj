@@ -37,3 +37,13 @@ Then(/^I select "([^"]*)" brand$/) do |arg|
 
 end
 
+#Then(/^I select "([^"]*)" storage$/) do |arg|
+#$b.label(:for=> internalMemory-64GB - 128GB).click
+#end
+
+Then(/^I select "([^"]*)" filter and "([^"]*)" Speed$/) do |filter, speed|
+  $b.span(text: filter).wait_until(&:present?).click
+  puts("selcted" + filter)
+  $b.label(:for=> speed).click
+  sleep(10)
+end
