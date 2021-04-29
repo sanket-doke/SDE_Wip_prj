@@ -45,5 +45,28 @@ Then(/^I select "([^"]*)" filter and "([^"]*)" Speed$/) do |filter, speed|
   $b.span(text: filter).wait_until(&:present?).click
   puts("selcted" + filter)
   $b.label(:for=> speed).click
-  sleep(10)
+  puts ("selected" + speed)
+
+
+end
+
+Then(/^I select "([^"]*)" filter and "([^"]*)" as term$/) do |pay,dur|
+  $b.span(text: pay).wait_until(&:present?).click
+  puts("selcted" + pay)
+  #$b.label(:for=> dur).click
+  $b.label(:text=> dur).click
+  puts ("selected" + dur)
+
+end
+
+Then(/^I sort the filter with price$/) do
+  $b.span(text: /All Sort/).wait_until(&:present?).click
+  $b.label(:text=> /Price Lowest to Highest/).click
+  sleep(5)
+end
+
+Then(/^I click on "([^"]*)" filter and "([^"]*)"  storage$/) do |arg1, arg2|
+  $b.span(text: arg1).wait_until(&:present?).click
+  $b.label(:text=> /128GB - 256GB/).click
+  $b.wait(1000)
 end

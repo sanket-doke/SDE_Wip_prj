@@ -8,9 +8,8 @@ Feature: open browser and hit google URL
     Then will click on the latest phones
     Then I click on "All Brands" filter
     Then I select "brand-Samsung" brand
-    Then I click on "All Internal Memory" filter
-    #Then I select "internalMemory" storage
+    Then I click on "All Internal Memory" filter and "64GB 128GB"  storage
     Then I select "All Network Speed" filter and "networkSpeed-5G" Speed
-    #Then I Select "All Network Speed" filter and select "5G" type
-
+    Then I select "All Payment Terms" filter and "24 months" as term
+    Then I sort the filter with price
 
